@@ -36,15 +36,23 @@ Pattern  === time -> [event]
 -- Time as Arc and Rational
 type Time = Rational
 
+# Using estuary
+-- You have 6 editors. On the top there is a play button and a dropdown field.
+-- The value of the dropdown field must be "MiniTidal"
+-- You can trigger the code with the play button or with the key combination
+-- "Shift + Enter"
+
 # sources of sound
 
-## synthesizers
+## samples
 
 s "notes" >| up "0"
 
 s "notes" >| up "d"
 
-## samples
+-- in case it's to loud use gain
+s "notes" >| up "d" # gain 0.7
+
 
 s "numbers" >| n "0"
 
