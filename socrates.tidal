@@ -13,7 +13,9 @@ does not make sound itself, uses
 https://supercollider.github.io/
 https://github.com/musikinformatik/SuperDirt
 
-is embedded in the Haskell language https://www.haskell.org/
+Is embedded in the Haskell language https://www.haskell.org/
+
+Doing some collab on https://estuary.mcmaster.ca/
 
 ## Why Haskell and what does TidalCycles benefit from?
 
@@ -49,6 +51,10 @@ s "numbers" >| n "0"
 s "numbers" >| n "0" # speed "-1"
 
 s "numbers" >| n "0" # speed rand
+
+s "numbers" >| n "0" # cutoff 500
+
+s "numbers" >| n "0" # cutoff (4000 * rand)
 
 -- Why does 'speed rand' work?
 -- Answer: higher order functions!
@@ -146,7 +152,7 @@ s "arpy" >| n "[c? a f?0.8 e]"
 
 ## playing modified pattern version parallel
 
-d1 $ off "0.25" (fast 2) $ s "arpy" >| n "[c a f e]"
+off "0.25" (fast 2) $ s "arpy" >| n "[c a f e]"
 
 # The five layer of pattern
 
